@@ -164,8 +164,8 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-6 py-6">
-            <div class="flex flex-col gap-y-4 text-lg font-medium">
+        <div id="mobile-menu" class="hidden md:hidden overflow-y-scroll bg-white border-t px-6 py-3">
+            <div class="flex flex-col gap-y-2 text-sm overflow-y-auto font-medium">
                 <a onclick="navigateToSection('home');toggleMobileMenu()" class="py-3 border-b">Home</a>
                 <a onclick="navigateToSection('services');toggleMobileMenu()" class="py-3 border-b">Our Services</a>
                 <a onclick="navigateToSection('about');toggleMobileMenu()" class="py-3 border-b">About BJB Consults</a>
@@ -173,12 +173,12 @@
                 <a onclick="navigateToSection('how-it-works');toggleMobileMenu()" class="py-3 border-b">Quick Onboarding</a>
                 <div class="pt-4 flex flex-col gap-y-3">
                     <a href="https://wa.me/256773730261" target="_blank"
-                       class="flex justify-center items-center gap-x-3 bg-green-600 text-white py-4 rounded-3xl font-semibold">
-                        <i class="fa-brands fa-whatsapp text-2xl"></i> CHAT ON WHATSAPP (+256 773 730 261)
+                       class="flex justify-center items-center gap-x-3 bg-green-600 text-white py-4 rounded-3xl font-medium text-sm">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> CHAT ON WHATSAPP
                     </a>
                     <a href="mailto:bruceturyahabwe@gmail.com" target="_blank"
-                       class="flex justify-center items-center gap-x-3 border border-teal-600 text-teal-700 py-4 rounded-3xl font-semibold">
-                        <i class="fa-solid fa-envelope text-2xl"></i> EMAIL US
+                       class="flex justify-center items-center gap-x-3 border border-teal-600 text-teal-700 py-4 rounded-3xl font-medium text-sm">
+                        <i class="fa-solid fa-envelope text-xl"></i> EMAIL US
                     </a>
                 </div>
             </div>
@@ -197,8 +197,8 @@
         <div class="max-w-screen-2xl mx-auto px-6 md:px-12 relative z-30">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
                 <!-- Left content -->
-                <div class="lg:col-span-7">
-                    <div class="inline-flex items-center gap-x-2 bg-white/90 text-teal-800 text-sm font-semibold px-6 py-2 rounded-3xl mb-8 shadow-xl">
+                <div class="lg:col-span-7 mt-3">
+                    <div class="inline-flex items-center gap-x-2 bg-white/90 text-teal-800 text-sm font-semibold px-3 py-2 rounded-3xl mb-8 shadow-xl">
                         <span class="relative flex h-3 w-3">
                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                             <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500 mt-2"></span>
@@ -210,21 +210,21 @@
                         YOUR ACADEMIC<br>&amp; PROFESSIONAL<br><span class="text-amber-400">SUCCESS PARTNER</span>
                     </h1>
                     
-                    <p class="text-xl md:text-2xl text-white/90 max-w-lg mb-10">
+                    <p class="text-sm md:text-2xl text-white/90 max-w-lg mb-10">
                         Expert research, book analysis, case studies, dissertations, capstone projects &amp; more.<br>
                         <span class="font-semibold text-amber-300">Where quality matters in Uganda.</span>
                     </p>
                     
                     <div class="flex flex-wrap gap-4">
                         <button onclick="showQuickOnboardModal()" 
-                                class="px-10 py-5 bg-white text-teal-800 font-semibold text-xl rounded-3xl flex items-center gap-x-3 hover:shadow-2xl hover:scale-105">
+                                class="px-2 py-4 bg-white text-teal-800 font-semibold text-sm md:text-xl rounded-3xl flex items-center gap-x-3 hover:shadow-2xl hover:scale-105">
                             START YOUR PROJECT
                             <i class="fa-solid fa-arrow-right"></i>
                         </button>
                         
                         <a href="https://wa.me/256773730261" target="_blank"
-                           class="px-10 py-5 border-2 border-white text-white font-semibold text-xl rounded-3xl flex items-center gap-x-3 hover:bg-white hover:text-teal-800">
-                            <i class="fa-brands fa-whatsapp text-3xl"></i>
+                           class="px-2 py-3 border-2 border-white text-white font-semibold text-sm md:text-xl rounded-3xl flex items-center gap-x-3 hover:bg-white hover:text-teal-800">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
                             CHAT WITH US NOW
                         </a>
                         
@@ -238,18 +238,18 @@
                     </div>
                     
                     <!-- Trust signals -->
-                    <div class="flex items-center gap-x-8 mt-16 text-white/70">
-                        <div class="flex -space-x-4">
-                            <div class="w-8 h-8 bg-white rounded-2xl flex items-center justify-center text-xs font-bold text-teal-800 ring-2 ring-white">100+</div>
-                            <div class="w-8 h-8 bg-white rounded-2xl flex items-center justify-center text-xs font-bold text-teal-800 ring-2 ring-white">UG</div>
+                    <div class="flex items-center gap-x-3 md:gap-x-8 mt-12 text-white/70">
+                        <div class="flex -space-x-2 md:flex-space-x-4">
+                            <div class="w-6 h-6 md:w-8 md:h-8 bg-white rounded-2xl flex items-center justify-center text-xs font-bold text-teal-800 ring-2 ring-white">100+</div>
+                            <div class="w-6 h-6 bg-white rounded-2xl flex items-center justify-center text-xs font-bold text-teal-800 ring-2 ring-white">UG</div>
                         </div>
                         <div>
-                            <p class="font-medium">200+ dissertations completed</p>
+                            <p class="font-medium text-xs md:text-sm">200+ dissertations completed</p>
                             <p class="text-xs">Undergrad &amp; Postgraduate</p>
                         </div>
                         <div class="h-12 w-px bg-white/30"></div>
-                        <div class="flex items-center text-2xl">
-                            ★★★★☆ <span class="text-sm ml-2">4.98/5 on WhatsApp</span>
+                        <div class="flex items-center text-sm md:text-2xl">
+                            ★★★★☆ <span class="text-xs md:text-sm ml-1">4.98/5 on WhatsApp</span>
                         </div>
                     </div>
                 </div>
@@ -273,7 +273,7 @@
                         <!-- Stats pill -->
                         <div class="absolute bottom-8 right-8 bg-white text-teal-900 text-sm font-semibold rounded-3xl px-6 py-3 shadow-xl flex items-center gap-x-4">
                             <div>
-                                <div class="text-3xl font-bold text-teal-600">87</div>
+                                <div class="text-xl font-bold text-teal-600">87</div>
                                 <div class="text-xs -mt-1">PROJECTS THIS MONTH</div>
                             </div>
                             <div class="text-4xl">🇺🇬</div>
@@ -307,31 +307,31 @@
     </section>
 
     <!-- ABOUT US -->
-    <section id="about" class="py-20 bg-blue-100">
-        <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+    <section id="about" class="py-10 bg-blue-100">
+        <div class="max-w-screen-2xl mx-auto px-3 md:px-12">
             <div class="grid lg:grid-cols-12 gap-16 items-center">
                 <div class="lg:col-span-5">
-                    <span class="px-4 py-1 text-xs font-bold tracking-widest bg-teal-100 text-teal-700 rounded-3xl">ESTABLISHED IN UGANDA</span>
-                    <h2 class="section-header text-5xl font-bold text-gray-900 mt-4 mb-8 leading-none">BJB Consults (U) LTD<br>Empowering Minds Across Uganda</h2>
-                    <p class="text-xl text-gray-600">
+                    <span class="px-3 py-1 text-xs font-bold tracking-widest bg-teal-100 text-teal-700 rounded-3xl">ESTABLISHED IN UGANDA</span>
+                    <h2 class="section-header text-2xl font-bold text-gray-900 mt-4 text-center flex justify-center mb-5 leading-none">BJB Consults (U) LTD<br>Empowering Minds Across Uganda</h2>
+                    <p class="text-sm text-gray-600">
                         Founded with a mission to bridge the gap between ambition and academic success, we provide world-class consultancy services to undergraduate, postgraduate students and professionals.
                     </p>
-                    <p class="mt-8 text-gray-600">
+                    <p class="mt-6 text-gray-600">
                         From the classrooms of Makerere University to the boardrooms of Kampala, we deliver personalized, high-integrity support that turns complex challenges into remarkable achievements.
                     </p>
                     
                     <div class="mt-12 grid grid-cols-3 gap-8">
                         <div>
-                            <div class="text-5xl font-bold text-teal-600">200+</div>
-                            <div class="text-sm font-medium">DISSERTATIONS GUIDED</div>
+                            <div class="text-xl  md:text-4xl font-bold text-teal-600">200+</div>
+                            <div class="text-xs font-medium">DISSERTATIONS GUIDED</div>
                         </div>
                         <div>
-                            <div class="text-5xl font-bold text-amber-500">98%</div>
-                            <div class="text-sm font-medium">DISTINCTION RATE</div>
+                            <div class="text-xl md:text-4xl font-bold text-amber-500">98%</div>
+                            <div class="text-xs font-medium">DISTINCTION RATE</div>
                         </div>
                         <div>
-                            <div class="text-5xl font-bold text-teal-600">4.98</div>
-                            <div class="text-sm font-medium">AVERAGE CLIENT RATING</div>
+                            <div class="text-xl md:text-4xl font-bold text-teal-600">4.98</div>
+                            <div class="text-xs font-medium">AVERAGE CLIENT RATING</div>
                         </div>
                     </div>
                     
@@ -363,15 +363,15 @@
         <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
             <div class="text-center mb-16">
                 <span class="text-teal-600 font-bold uppercase tracking-widest text-sm">OUR EXPERTISE</span>
-                <h2 class="section-header text-5xl font-bold text-gray-900 mt-3">Services That Transform Ideas Into Excellence</h2>
-                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Detailed research. Book analysis. Case studies. And everything in between. Tailored for Uganda’s brightest minds.</p>
+                <h2 class="section-header text-2xl md:text-4xl font-bold text-gray-900 mt-3">Services That Transform Ideas Into Excellence</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-sm text-gray-600">Detailed research. Book analysis. Case studies. And everything in between. Tailored for Uganda’s brightest minds.</p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 <!-- Service 1 -->
                 <div class="card-hover bg-white rounded-3xl p-8 border border-transparent hover:border-teal-200 group">
-                    <div class="service-icon w-14 h-14 bg-teal-100 text-teal-700 rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:rotate-12">🔬</div>
-                    <h4 class="text-2xl font-semibold mb-3">Detailed Research Assistance</h4>
+                    <div class="service-icon w-14 h-14 bg-teal-100 text-teal-700 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:rotate-12">🔬</div>
+                    <h4 class="text-xl md:text-2xl font-semibold mb-3">Detailed Research Assistance</h4>
                     <p class="text-gray-600">Undergraduate &amp; postgraduate research, literature reviews, methodology design, full dissertations &amp; theses.</p>
                     <div class="text-teal-600 text-sm font-medium mt-8 flex items-center">
             <a href="#contact">
@@ -382,8 +382,8 @@
                 
                 <!-- Service 2 -->
                 <div class="card-hover bg-white rounded-3xl p-8 border border-transparent hover:border-amber-200 group">
-                    <div class="service-icon w-14 h-14 bg-amber-100 text-amber-700 rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:rotate-12">📖</div>
-                    <h4 class="text-2xl font-semibold mb-3">Book Analysis &amp; Reviews</h4>
+                    <div class="service-icon w-14 h-14 bg-amber-100 text-amber-700 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:rotate-12">📖</div>
+                    <h4 class="text-xl md:text-2xl font-semibold mb-3">Book Analysis &amp; Reviews</h4>
                     <p class="text-gray-600">In-depth book reviews, critical analysis, thematic studies, and academic book reports for any discipline.</p>
                     <div class="text-teal-600 text-sm font-medium mt-8 flex items-center">
             <a href="#contact">
@@ -394,8 +394,8 @@
                 
                 <!-- Service 3 -->
                 <div class="card-hover bg-white rounded-3xl p-8 border border-transparent hover:border-purple-200 group">
-                    <div class="service-icon w-14 h-14 bg-purple-100 text-purple-700 rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:rotate-12">📊</div>
-                    <h4 class="text-2xl font-semibold mb-3">Case Studies &amp; Contextual Projects</h4>
+                    <div class="service-icon w-14 h-14 bg-purple-100 text-purple-700 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:rotate-12">📊</div>
+                    <h4 class="text-xl md:text-2xl font-semibold mb-3">Case Studies &amp; Contextual Projects</h4>
                     <p class="text-gray-600">Industry-specific case studies, real-world problem analysis, and contextual research tailored to Uganda’s economy.</p>
                     <div class="text-teal-600 text-sm font-medium mt-8 flex items-center">            <a href="#contact">
                 Learn more <i class="fa-solid fa-arrow-right ml-2"></i>
@@ -405,8 +405,8 @@
                 
                 <!-- Service 4 -->
                 <div class="card-hover bg-white rounded-3xl p-8 border border-transparent hover:border-rose-200 group">
-                    <div class="service-icon w-14 h-14 bg-rose-100 text-rose-700 rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:rotate-12">🎓</div>
-                    <h4 class="text-2xl font-semibold mb-3">Capstone &amp; Thesis Support</h4>
+                    <div class="service-icon w-14 h-14 bg-rose-100 text-rose-700 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:rotate-12">🎓</div>
+                    <h4 class="text-xl md:text-2xl font-semibold mb-3">Capstone &amp; Thesis Support</h4>
                     <p class="text-gray-600">End-to-end capstone project guidance, thesis writing, defense preparation, and final submission polishing.</p>
                     <div class="text-teal-600 text-sm font-medium mt-8 flex items-center">            <a href="#contact">
                 Learn more <i class="fa-solid fa-arrow-right ml-2"></i>
@@ -416,7 +416,7 @@
                 
                 <!-- Service 5 -->
                 <div class="card-hover bg-white rounded-3xl p-8 border border-transparent hover:border-sky-200 group">
-                    <div class="service-icon w-14 h-14 bg-sky-100 text-sky-700 rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:rotate-12">📋  </div>         <h4 class="text-2xl font-semibold mb-3">Proposal &amp; Concept Papers</h4>
+                    <div class="service-icon w-14 h-14 bg-sky-100 text-sky-700 rounded-2xl flex items-center justify-center text-3xl mb-8  group-hover:rotate-12">📋  </div>         <h4 class="text-xl md:text-2xl font-semibold mb-3">Proposal &amp; Concept Papers</h4>
                     <p class="text-gray-600">Research proposals, concept notes, grant applications, and topic development with 100% approval guarantee.</p>
                     <div class="text-teal-600 text-sm font-medium mt-8 flex items-center">
            <a href="#contact">
@@ -427,8 +427,8 @@
                 
                 <!-- Service 6 -->
                 <div class="card-hover bg-white rounded-3xl p-8 border border-transparent hover:border-emerald-200 group">
-                    <div class="service-icon w-14 h-14 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:rotate-12">📈</div>
-                    <h4 class="text-2xl font-semibold mb-3">Data Collection &amp; Analysis</h4>
+                    <div class="service-icon w-14 h-14 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:rotate-12">📈</div>
+                    <h4 class="text-xl md:text-2xl font-semibold mb-3">Data Collection &amp; Analysis</h4>
                     <p class="text-gray-600">Questionnaire design, field surveys, SPSS / STATA / R analysis, data visualization, and interpretation.</p>
                     <div class="text-teal-600 text-sm font-medium mt-8 flex items-center"> 
             <a href="#contact">
@@ -439,8 +439,8 @@
                 
                 <!-- Service 7 -->
                 <div class="card-hover bg-white rounded-3xl p-8 border border-transparent hover:border-violet-200 group">
-                    <div class="service-icon w-14 h-14 bg-violet-100 text-violet-700 rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:rotate-12">💼</div>
-                    <h4 class="text-2xl font-semibold mb-3">Business Plans &amp; Strategies</h4>
+                    <div class="service-icon w-14 h-14 bg-violet-100 text-violet-700 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:rotate-12">💼</div>
+                    <h4 class="text-xl md:text-2xl font-semibold mb-3">Business Plans &amp; Strategies</h4>
                     <p class="text-gray-600">Professional business plans, feasibility studies, market research, and startup consulting services.</p>
                     <div class="text-teal-600 text-sm font-medium mt-8 flex items-center">
          <a href="#contact">
@@ -451,8 +451,8 @@
                 
                 <!-- Service 8 -->
                 <div class="card-hover bg-white rounded-3xl p-8 border border-transparent hover:border-orange-200 group">
-                    <div class="service-icon w-14 h-14 bg-orange-100 text-orange-700 rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:rotate-12">🧠</div>
-                    <h4 class="text-2xl font-semibold mb-3">Aptitude Tests &amp; Exam Prep</h4>
+                    <div class="service-icon w-14 h-14 bg-orange-100 text-orange-700 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:rotate-12">🧠</div>
+                    <h4 class=" text-xl md:text-2xl font-semibold mb-3">Aptitude Tests &amp; Exam Prep</h4>
                     <p class="text-gray-600">GMAT, GRE, aptitude test coaching, scholarship application support, and interview preparation.</p>
                     <div class="text-teal-600 text-sm font-medium mt-8 flex items-center">
          <a href="#contact">
@@ -464,9 +464,8 @@
             
             <div class="text-center mt-12">
                 <button onclick="showQuickOnboardModal()" 
-                        class="inline-flex items-center px-8 py-4 rounded-3xl bg-gradient-to-r from-teal-600 to-amber-500 text-white font-semibold text-lg shadow-xl hover:shadow-2xl">
+                        class="inline-flex items-center px-6 py-4 rounded-3xl bg-gradient-to-r from-teal-600 to-amber-500 text-white font-semibold text-sm shadow-xl hover:shadow-2xl">
                     EXPLORE ALL 12+ SERVICES 
-                    <span class="ml-4 text-2xl">→</span>
                 </button>
             </div>
         </div>
@@ -477,29 +476,29 @@
         <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
             <div class="text-center mb-16">
                 <span class="px-4 py-1 bg-amber-400 text-gray-900 text-xs font-bold rounded-3xl">3 STEPS • 48 HOURS TO START</span>
-                <h2 class="text-5xl font-bold mt-4">Quick Onboarding — Start Your Project Today</h2>
+                <h2 class="text-xl md:text-5xl font-bold mt-4">Quick Onboarding — Start Your Project Today</h2>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="text-center group">
-                    <div class="w-16 h-16 mx-auto rounded-3xl bg-white/10 flex items-center justify-center text-5xl mb-6 group-hover:scale-110">1️⃣</div>
-                    <h3 class="font-semibold text-3xl mb-3">Share Your Brief</h3>
-                    <p class="text-gray-400">Send your topic, guidelines, or WhatsApp us your requirements. Our team responds within 30 minutes.</p>
-                    <div class="text-amber-400 mt-8 text-sm font-medium">WhatsApp • Email • Call</div>
+                    <div class="w-16 h-16 mx-auto rounded-3xl bg-white/10 flex items-center justify-center text-3xl mb-6 group-hover:scale-110">1️⃣</div>
+                    <h3 class="font-semibold text-2xl mb-3">Share Your Brief</h3>
+                    <p class="text-gray-400 text-sm">Send your topic, guidelines, or WhatsApp us your requirements. Our team responds within 30 minutes.</p>
+                    <div class="text-amber-400 mt-4 text-sm font-medium">WhatsApp • Email • Call</div>
                 </div>
-                <div class="text-center group">
-                    <div class="w-16 h-16 mx-auto rounded-3xl bg-white/10 flex items-center justify-center text-5xl mb-6 group-hover:scale-110">2️⃣</div>
-                    <h3 class="font-semibold text-3xl mb-3">Receive a Custom Quote</h3>
-                    <p class="text-gray-400">Transparent pricing based on urgency, word count &amp; complexity. No hidden fees. Ever.</p>
-                    <div class="flex justify-center mt-8 gap-x-6">
+                <div class="text-center group mt-2">
+                    <div class="w-16 h-16 mx-auto rounded-3xl bg-white/10 flex items-center justify-center text-3xl mb-4 group-hover:scale-110">2️⃣</div>
+                    <h3 class="font-semibold text-2xl mb-3">Receive a Custom Quote</h3>
+                    <p class="text-gray-400 text-sm">Transparent pricing based on urgency, word count &amp; complexity. No hidden fees. Ever.</p>
+                    <div class="flex justify-center mt-4 gap-x-6">
                         <div class="text-xs bg-white/10 px-4 py-2 rounded-2xl">24hr delivery possible</div>
                         <div class="text-xs bg-white/10 px-4 py-2 rounded-2xl">Flexible payment</div>
                     </div>
                 </div>
                 <div class="text-center group">
-                    <div class="w-16 h-16 mx-auto rounded-3xl bg-white/10 flex items-center justify-center text-5xl mb-6 group-hover:scale-110">3️⃣</div>
-                    <h3 class="font-semibold text-3xl mb-3">Get Delivered Excellence</h3>
-                    <p class="text-gray-400">Unlimited revisions, plagiarism-free guarantee, and direct access to your dedicated consultant.</p>
+                    <div class="w-16 h-16 mx-auto rounded-3xl bg-white/10 flex items-center justify-center text-3xl mb-6 group-hover:scale-110">3️⃣</div>
+                    <h3 class="font-semibold text-2xl mb-3">Get Delivered Excellence</h3>
+                    <p class="text-gray-400 text-sm">Unlimited revisions, plagiarism-free guarantee, and direct access to your dedicated consultant.</p>
                     <button onclick="showQuickOnboardModal()" class="mt-8 px-10 py-4 bg-white text-gray-900 rounded-3xl font-semibold">Begin Your Journey Now</button>
                 </div>
             </div>
@@ -566,7 +565,7 @@
     <!-- TESTIMONIALS -->
     <section id="testimonials" class="py-20 bg-teal-50">
         <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
-            <h2 class="text-center text-5xl font-bold mb-12">What Our Clients Say From Across Uganda</h2>
+            <h2 class="text-center md:text-4xl text-2xl font-bold mb-8">What Our Clients Say From Across Uganda</h2>
             
             <div id="testimonial-slider" class="relative">
                 <div class="flex transition-transform duration-700 ease-out" id="slides-container">
@@ -585,19 +584,19 @@
     <div class="bg-gradient-to-r from-teal-700 to-amber-500 py-8 text-white">
         <div class="max-w-screen-2xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-                <div id="stat-1" class="stat-number text-6xl font-bold">248</div>
+                <div id="stat-1" class="stat-number text-4xl font-bold">248</div>
                 <p class="text-sm uppercase tracking-widest">Projects Delivered</p>
             </div>
             <div>
-                <div id="stat-2" class="stat-number text-6xl font-bold">94</div>
+                <div id="stat-2" class="stat-number text-4xl font-bold">94</div>
                 <p class="text-sm uppercase tracking-widest">Universities Served</p>
             </div>
             <div>
-                <div id="stat-3" class="stat-number text-6xl font-bold">12</div>
+                <div id="stat-3" class="stat-number text-4xl font-bold">12</div>
                 <p class="text-sm uppercase tracking-widest">Districts in Uganda</p>
             </div>
             <div>
-                <div id="stat-4" class="stat-number text-6xl font-bold">4.98</div>
+                <div id="stat-4" class="stat-number text-4xl font-bold">4.98</div>
                 <p class="text-sm uppercase tracking-widest">Average Rating</p>
             </div>
         </div>
@@ -608,37 +607,38 @@
         <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
             <div class="grid lg:grid-cols-12 gap-12">
                 <div class="lg:col-span-5">
-                    <h2 class="text-5xl font-bold">Ready to Excel?</h2>
-                    <p class="mt-6 text-xl">Reach out today. Our response time is under 30 minutes during business hours. Click on a contact channel below to get started.</p>
+                    <h2 class="text-3xl font-bold">Ready to Excel?</h2>
+                    <p class="mt-3 text-sm
+                    ">Reach out today. Our response time is under 30 minutes during business hours. Click on a contact channel below to get started.</p>
                     
                     <div class="mt-12 space-y-8 flex flex-col justify-between items-center">
                         
                 <div class="flex flex-col gap-y-3 items-center">
                   <a href="https://wa.me/256773730261" target="_blank">
-                  <i class="fa-brands fa-whatsapp text-5xl text-green-500"></i>
+                  <i class="fa-brands fa-whatsapp text-3xl md:text-5xl text-green-500"></i>
                   </a>    
-                                <p class="text-green-600">Instant chat • Voice note support</p>
+                                <p class="text-green-600 text-sm">Instant chat • Voice note support</p>
             </div>
                         
                               <div class="flex flex-col gap-y-3 items-center">
                   <a href="tel:+256775427655" target="_blank">
-                  <i class="fa-solid fa-phone text-5xl text-teal-600"></i>
+                  <i class="fa-solid fa-phone text-3xl md:text-5xl  text-teal-600"></i>
                   </a>    
-                                <p class="text-green-600">Call any time Mon–Sat 8am–8pm</p>
+                                <p class="text-green-600 text-sm">Call any time Mon–Sat 8am–8pm</p>
             </div>
             
            <div class="flex flex-col gap-y-3 items-center">
                   <a href="mailto:bjbconsults@gmail.com" target="_blank">
-                  <i class="fa-solid fa-envelope text-5xl text-amber-500"></i>
+                  <i class="fa-solid fa-envelope text-3xl md:text-5xl  text-amber-500"></i>
                   </a>    
-                                <p class="text-green-600">Reply guaranteed within 1 hour</p>
+                                <p class="text-green-600 text-sm">Reply guaranteed within 1 hour</p>
             </div>
 
            <div class="flex flex-col gap-y-3 items-center">
            <a href="https://www.facebook.com/profile.php?id=100063961293854" target="_blank">
-                  <i class="fa-brands fa-facebook text-5xl text-blue-600"></i>
+                  <i class="fa-brands fa-facebook text-3xl md:text-5xl  text-blue-600"></i>
                   </a>    
-                                <p class="text-green-600">facebook.com/BJBConsultUganda</p>
+                                <p class="text-green-600 text-sm">facebook.com/BJBConsultUganda</p>
             </div>
 
              </div>
@@ -651,8 +651,8 @@
                 </div>
                 
                 <!-- Quick form -->
-                <div class="lg:col-span-7 bg-gray-50 rounded-3xl p-10">
-                    <h3 class="text-3xl font-semibold mb-6">Submit Your Project Brief</h3>
+                <div class="lg:col-span-7 bg-gray-50 rounded-3xl p-2 text-sm">
+                    <h3 class="text-2xl font-semibold mb-6">Submit Your Project Brief</h3>
                     <form id="contact-form" action="https://formsubmit.co/bjbconsults@gmail.com"method="POST" onsubmit="handleSubmit(event)" class="space-y-6">
                         <div class="grid grid-cols-2 gap-6">
                             <input type="hidden" name="_captcha" value="false">
@@ -665,12 +665,12 @@
                         
                         <div class="flex justify-between items-center">
                             <label class="flex items-center text-sm cursor-pointer">
-                                <input type="checkbox" checked class="mr-2 accent-teal-600"> I agree to the terms &amp; privacy policy
+                                <input type="checkbox" checked class="mr-2 accent-teal-600 text-sm"> I agree to the terms &amp; privacy policy
                             </label>
                             <button type="submit" 
-                                    class="px-12 py-6 bg-teal-700 hover:bg-teal-800 text-white font-semibold text-xl rounded-3xl flex items-center">
+                                    class="px-3 py-3 bg-teal-700 hover:bg-teal-800 text-white font-medium text-sm rounded-3xl flex items-center">
                                 SEND BRIEF 
-                                <i class="fa-solid fa-paper-plane ml-3"></i>
+                                <i class="fa-solid fa-paper-plane ml-2"></i>
                             </button>
                         </div>
                     </form>
@@ -680,18 +680,18 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-gray-950 text-white pt-16">
+    <footer class="bg-gray-950 text-white pt-16 text-sm">
         <div class="max-w-screen-2xl mx-auto px-6 md:px-10">
             <div class="flex flex-col items-start md:flex-row gap-3 md:items-start justify-between">
                 <!-- Col 1 -->
                 <div class="md:col-span-4">
                     <div class="flex items-center gap-x-3 mb-6">
-            <img class="w-20 h-20 rounded-full" src="logo.jpg" alt="" />
-                        <h1 class="text-4xl font-bold">BJB CONSULTS</h1>
+            <img class="w-10 h-10 rounded-full" src="logo.jpg" alt="" />
+                        <h1 class="text-3xl font-bold">BJB CONSULTS</h1>
                     </div>
                     <p class="text-gray-400 max-w-xs">Where quality matters. Transforming academic dreams into reality since 2023.</p>
                     
-                    <div class="mt-8 flex gap-x-6 text-4xl">
+                    <div class="mt-8 flex gap-x-6 text-2xl md:text-3xl">
                         <a href="https://wa.me/256773730261" target="_blank" class="hover:text-green-400"><i class="fa-brands fa-whatsapp"></i></a>
                         <a href="https://www.facebook.com/profile.php?id=100063961293854" target="_blank" class="hover:text-blue-400"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="mailto:bruceturyahabwe@gmail.com" target="_blank" class="hover:text-amber-400"><i class="fa-solid fa-envelope"></i></a>
@@ -742,9 +742,9 @@
                 <!-- Contact info -->
                 <div class="md:col-span-2">
                     <p class="uppercase text-teal-400 text-sm mb-6 font-bold">Get In Touch</p>
-                    <p class="text-2xl font-semibold"><a href="tel:+256773730261" target="_blank">+256773730261</a></p>
-                    <p class="text-2xl font-semibold"><a href="tel:+256775427655" target="_blank">+256775427655</a></p>
-                    <p class="text-2xl font-semibold"><a href="tel:+256707447037" target="_blank">+256707447037</a></p>
+                    <p class="text-xl font-semibold"><a href="tel:+256773730261" target="_blank">+256773730261</a></p>
+                    <p class="text-xl font-semibold"><a href="tel:+256775427655" target="_blank">+256775427655</a></p>
+                    <p class="text-xl font-semibold"><a href="tel:+256707447037" target="_blank">+256707447037</a></p>
                     <br>
                     <p class="text-gray-400"><a href="mailto:bruceturyahabwe@gmail.com" target="_blank">bruceturyahabwe@gmail.com</a></p>
                     <p class="text-gray-400"><a href="mailto:bjbconsults@gmail.com"   target="_blank">bjbconsults@gmail.com</a></p>
@@ -929,7 +929,7 @@ function toggleMobileMenu() {
                                 <p class="text-sm text-gray-500">${t.role}</p>
                             </div>
                         </div>
-                        <p class="italic text-2xl whitespace-normal max-w-[100%]">"${t.quote}"</p>
+                        <p class="italic text-sm md:text-xl whitespace-normal max-w-[100%]">"${t.quote}"</p>
                         <div class="flex text-amber-400 mt-8">★★★★★</div>
                     </div>
                 </div>`
