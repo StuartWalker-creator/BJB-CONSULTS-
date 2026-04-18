@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BJB Consults (U) LTD - Uganda's premier academic and professional consultancy. Expert research, book analysis, case studies, dissertations & more.">
+    <title>BJB Consults | Academic & Professional Excellence in Uganda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        
+        :root {
+            --primary: #0f766e;
+        }
+        
+        * {
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, transform, opacity;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 200ms;
+        }
+        
+        .hero-bg {
+            animation: heroFloat 8s ease-in-out infinite;
+        }
+        
+        @keyframes heroFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-25px) rotate(2deg); }
+        }
+        
+        .section-header:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, #0f766e, #f59e0b);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 9999px;
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-12px) scale(1.04);
+            box-shadow: 0 25px 50px -12px rgb(15 118 110 / 0.25);
+        }
+        
+        .navbar-scrolled {
+            background-color: rgba(255, 255, 255, 0.97) !important;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .service-icon {
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2.5px;
+            bottom: -4px;
+            left: 0;
+            background-color: #0f766e;
+            transition: width 0.4s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+        
+        .testimonial-slide {
+            transition: transform 0.7s cubic-bezier(0.32, 0.72, 0, 1);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- NAVBAR -->
+    <nav id="navbar" class="bg-white border-b sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <div class="w-11 h-11 bg-gradient-to-br from-teal-600 to-amber-500 rounded-3xl flex items-center justify-center text-white text-4xl shadow-inner">📘</div>
+                <div>
+                    <h1 class="text-3xl font-bold tracking-tighter text-teal-800">BJB</h1>
+                    <p class="text-[10px] leading-none text-amber-600 font-semibold">CONSULTS (U) LTD</p>
+                </div>
+            </div>
+
+            <div class="hidden lg:flex items-center gap-x-9 text-sm font-medium">
+                <a onclick="navigateToSection('home')" class="nav-link cursor-pointer text-gray-700 hover:text-teal-700">Home</a>
+                <a onclick="navigateToSection('services')" class="nav-link cursor-pointer text-gray-700 hover:text-teal-700">Services</a>
+                <a onclick="navigateToSection('about')" class="nav-link cursor-pointer text-gray-700 hover:text-teal-700">About</a>
+                <a onclick="navigateToSection('how-it-works')" class="nav-link cursor-pointer text-gray-700 hover:text-teal-700">How it Works</a>
+                <a onclick="navigateToSection('testimonials')" class="nav-link cursor-pointer text-gray-700 hover:text-teal-700">Testimonials</a>
+            </div>
+
+            <div class="flex items-center gap-x-4">
+                <a href="https://wa.me/256773730261" target="_blank"
+                   class="hidden md:flex items-center gap-x-2 bg-green-600 hover:bg-green-700 text-white px-5 h-11 rounded-3xl text-sm font-semibold shadow-lg">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+                
+                <button onclick="showQuickOnboardModal()" 
+                        class="px-7 h-11 bg-gradient-to-r from-teal-600 to-amber-500 hover:from-teal-700 hover:to-amber-600 text-white font-semibold rounded-3xl text-sm shadow-xl flex items-center">
+                    GET STARTED
+                </button>
+
+                <button onclick="toggleMobileMenu()" class="lg:hidden text-3xl text-teal-800">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t px-6 py-8">
+            <div class="flex flex-col gap-y-6 text-lg">
+                <a onclick="navigateToSection('home');toggleMobileMenu()" class="py-2">Home</a>
+                <a onclick="navigateToSection('services');toggleMobileMenu()" class="py-2">Services</a>
+                <a onclick="navigateToSection('about');toggleMobileMenu()" class="py-2">About Us</a>
+                <a onclick="navigateToSection('how-it-works');toggleMobileMenu()" class="py-2">How it Works</a>
+                <a onclick="navigateToSection('testimonials');toggleMobileMenu()" class="py-2">Testimonials</a>
+                
+                <div class="pt-6 border-t">
+                    <a href="https://wa.me/256773730261" target="_blank" 
+                       class="block w-full text-center bg-green-600 text-white py-4 rounded-3xl font-semibold">
+                        Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home" class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-teal-900 via-teal-800 to-gray-900">
+        <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1522202176988-5a6c1c6b4d4b')] bg-cover bg-center"></div>
+        
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-12 relative z-10 pt-20">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 fade-in" id="hero-content">
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-white text-sm px-6 py-3 rounded-3xl mb-8">
+                        <span class="relative flex h-3 w-3">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                        </span>
+                        KAMPALA, UGANDA • EST. 2023
+                    </div>
+                    
+                    <h1 class="text-6xl md:text-7xl font-bold text-white leading-none tracking-tight">
+                        Academic Excellence,<br>
+                        <span class="text-amber-400">Made Simple in Uganda</span>
+                    </h1>
+                    
+                    <p class="mt-6 text-xl text-white/90 max-w-lg">
+                        Expert research • Book analysis • Case studies • Dissertations • Data analysis • And more.
+                    </p>
+                    
+                    <div class="mt-10 flex flex-wrap gap-4">
+                        <button onclick="showQuickOnboardModal()" 
+                                class="px-10 py-5 bg-white text-teal-900 font-semibold rounded-3xl text-lg shadow-2xl hover:scale-105 flex items-center gap-x-3">
+                            START YOUR PROJECT
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <a href="https://wa.me/256773730261" target="_blank"
+                           class="px-8 py-5 border-2 border-white/70 text-white hover:bg-white hover:text-teal-900 font-semibold rounded-3xl text-lg flex items-center gap-x-3">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            CHAT NOW
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-5 hidden lg:block">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b" 
+                             alt="Students in Uganda" 
+                             class="rounded-3xl shadow-2xl hero-bg w-full">
+                        <div class="absolute -top-6 -right-6 bg-white text-teal-800 px-8 py-6 rounded-3xl shadow-xl text-center">
+                            <div class="text-5xl font-bold">98%</div>
+                            <div class="text-sm font-medium">Success Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div onclick="navigateToSection('services')" 
+             class="absolute bottom-12 left-1/2 flex flex-col items-center text-white/70 cursor-pointer hover:text-white">
+            <span class="text-xs tracking-widest">SCROLL TO EXPLORE</span>
+            <i class="fa-solid fa-chevron-down animate-bounce mt-2 text-3xl"></i>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+            <div class="grid lg:grid-cols-12 gap-16 items-center">
+                <div class="lg:col-span-5 fade-in">
+                    <span class="uppercase text-teal-600 text-sm font-bold tracking-widest">About BJB Consults</span>
+                    <h2 class="text-5xl font-bold text-gray-900 mt-4 leading-tight">Your Trusted Academic Partner in Uganda</h2>
+                    <p class="mt-8 text-lg text-gray-600">
+                        We provide high-quality research, analysis, and writing support to students and professionals across Uganda.
+                    </p>
+                    <div class="mt-12 grid grid-cols-3 gap-6 text-center">
+                        <div class="fade-in">
+                            <div class="text-5xl font-bold text-teal-600">200+</div>
+                            <div class="text-sm mt-1">Projects Completed</div>
+                        </div>
+                        <div class="fade-in">
+                            <div class="text-5xl font-bold text-amber-500">94%</div>
+                            <div class="text-sm mt-1">Distinction Rate</div>
+                        </div>
+                        <div class="fade-in">
+                            <div class="text-5xl font-bold text-teal-600">4.98</div>
+                            <div class="text-sm mt-1">Client Rating</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-7 fade-in">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1" 
+                         alt="BJB Consults Team" 
+                         class="rounded-3xl w-full shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-24 bg-gradient-to-b from-teal-50 to-white">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-5xl font-bold">Our Services</h2>
+                <p class="mt-4 text-gray-600 max-w-md mx-auto">Comprehensive academic and professional support tailored for Ugandan students and professionals.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-hover bg-white p-8 rounded-3xl border fade-in">
+                    <div class="service-icon w-16 h-16 bg-teal-100 text-teal-700 rounded-3xl flex items-center justify-center text-5xl mb-6">🔬</div>
+                    <h3 class="text-2xl font-semibold">Detailed Research & Dissertations</h3>
+                    <p class="mt-4 text-gray-600">Full theses, literature reviews, methodology, and data analysis.</p>
+                </div>
+                
+                <div class="card-hover bg-white p-8 rounded-3xl border fade-in">
+                    <div class="service-icon w-16 h-16 bg-amber-100 text-amber-700 rounded-3xl flex items-center justify-center text-5xl mb-6">📖</div>
+                    <h3 class="text-2xl font-semibold">Book Analysis & Reviews</h3>
+                    <p class="mt-4 text-gray-600">Critical analysis, thematic studies, and academic book reports.</p>
+                </div>
+                
+                <div class="card-hover bg-white p-8 rounded-3xl border fade-in">
+                    <div class="service-icon w-16 h-16 bg-purple-100 text-purple-700 rounded-3xl flex items-center justify-center text-5xl mb-6">📊</div>
+                    <h3 class="text-2xl font-semibold">Case Studies & Reports</h3>
+                    <p class="mt-4 text-gray-600">Industry-specific case studies with Ugandan context.</p>
+                </div>
+                
+                <div class="card-hover bg-white p-8 rounded-3xl border fade-in">
+                    <div class="service-icon w-16 h-16 bg-rose-100 text-rose-700 rounded-3xl flex items-center justify-center text-5xl mb-6">🎓</div>
+                    <h3 class="text-2xl font-semibold">Capstone & Thesis Support</h3>
+                    <p class="mt-4 text-gray-600">End-to-end guidance from proposal to defense.</p>
+                </div>
+                
+                <div class="card-hover bg-white p-8 rounded-3xl border fade-in">
+                    <div class="service-icon w-16 h-16 bg-sky-100 text-sky-700 rounded-3xl flex items-center justify-center text-5xl mb-6">📋</div>
+                    <h3 class="text-2xl font-semibold">Proposal Writing</h3>
+                    <p class="mt-4 text-gray-600">Research proposals, concept papers & grant applications.</p>
+                </div>
+                
+                <div class="card-hover bg-white p-8 rounded-3xl border fade-in">
+                    <div class="service-icon w-16 h-16 bg-emerald-100 text-emerald-700 rounded-3xl flex items-center justify-center text-5xl mb-6">📈</div>
+                    <h3 class="text-2xl font-semibold">Data Analysis</h3>
+                    <p class="mt-4 text-gray-600">SPSS, STATA, R, surveys & visualizations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="py-24 bg-gray-900 text-white">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-5xl font-bold">How It Works</h2>
+                <p class="mt-3 text-gray-400">Start your project in under 60 seconds</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="text-center fade-in">
+                    <div class="w-20 h-20 mx-auto bg-white/10 rounded-3xl flex items-center justify-center text-6xl mb-6">1</div>
+                    <h4 class="text-2xl font-semibold">Share Your Brief</h4>
+                    <p class="mt-4 text-gray-400">Send requirements via WhatsApp or our form.</p>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="w-20 h-20 mx-auto bg-white/10 rounded-3xl flex items-center justify-center text-6xl mb-6">2</div>
+                    <h4 class="text-2xl font-semibold">Get a Quote</h4>
+                    <p class="mt-4 text-gray-400">Fast, transparent pricing within minutes.</p>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="w-20 h-20 mx-auto bg-white/10 rounded-3xl flex items-center justify-center text-6xl mb-6">3</div>
+                    <h4 class="text-2xl font-semibold">Receive Excellence</h4>
+                    <p class="mt-4 text-gray-400">Unlimited revisions + plagiarism-free guarantee.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="py-24 bg-white">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+            <h2 class="text-5xl font-bold text-center mb-16 fade-in">What Our Clients Say</h2>
+            
+            <div class="overflow-hidden" id="testimonial-container">
+                <div id="testimonial-slider" class="flex transition-transform duration-700 ease-out">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+            
+            <div class="flex justify-center gap-4 mt-12">
+                <button onclick="prevTestimonial()" class="w-14 h-14 border rounded-3xl flex items-center justify-center text-2xl hover:bg-teal-50">‹</button>
+                <button onclick="nextTestimonial()" class="w-14 h-14 border rounded-3xl flex items-center justify-center text-2xl hover:bg-teal-50">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT BAR -->
+    <div class="bg-gradient-to-r from-teal-700 to-amber-600 py-8 text-white text-center">
+        <div class="max-w-screen-2xl mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-8">
+            <a href="https://wa.me/256773730261" target="_blank" class="flex items-center gap-3 text-xl font-semibold">
+                <i class="fa-brands fa-whatsapp text-4xl"></i>
+                +256 773 730 261
+            </a>
+            <div class="hidden md:block h-8 w-px bg-white/40"></div>
+            <a href="mailto:bruceturyahabwe@gmail.com" class="flex items-center gap-3 text-xl font-semibold">
+                <i class="fa-solid fa-envelope text-3xl"></i>
+                bruceturyahabwe@gmail.com
+            </a>
+        </div>
+    </div>
+
+    <!-- SIMPLIFIED FOOTER -->
+    <footer class="bg-gray-950 text-gray-400 py-16">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-x-4">
+                    <div class="w-10 h-10 bg-gradient-to-br from-teal-500 to-amber-400 rounded-3xl flex items-center justify-center text-3xl text-white">📘</div>
+                    <div>
+                        <span class="text-2xl font-bold text-white">BJB Consults</span>
+                        <p class="text-xs">(U) LTD • Uganda</p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-x-8 gap-y-2 justify-center text-sm">
+                    <a href="#" class="hover:text-white">Services</a>
+                    <a href="#" class="hover:text-white">How it Works</a>
+                    <a href="#" class="hover:text-white">Testimonials</a>
+                    <a href="#" class="hover:text-white">Contact</a>
+                </div>
+                
+                <div class="flex gap-x-6 text-3xl">
+                    <a href="https://wa.me/256773730261" target="_blank" class="hover:text-green-400"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100063961293854" target="_blank" class="hover:text-blue-400"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="mailto:bruceturyahabwe@gmail.com" class="hover:text-amber-400"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+            
+            <div class="text-center text-xs text-gray-500 mt-16">
+                © 2026 BJB Consults (U) LTD • All Rights Reserved • Kampala, Uganda
+            </div>
+        </div>
+    </footer>
+
+    <!-- QUICK ONBOARD MODAL -->
+    <div id="onboard-modal" onclick="if(event.target.id==='onboard-modal') hideQuickOnboardModal()" 
+         class="hidden fixed inset-0 bg-black/70 z-[9999] flex items-center justify-center">
+        <div onclick="event.stopImmediatePropagation()" 
+             class="bg-white rounded-3xl max-w-lg w-full mx-4 p-10">
+            <div class="flex justify-between items-start">
+                <h3 class="text-3xl font-bold">Start Your Project</h3>
+                <button onclick="hideQuickOnboardModal()" class="text-4xl text-gray-300 hover:text-gray-600">×</button>
+            </div>
+            
+            <div class="mt-8 space-y-6">
+                <input id="modal-name" type="text" placeholder="Full Name" class="w-full px-6 py-5 border rounded-3xl focus:border-teal-400 outline-none">
+                <input id="modal-phone" type="tel" placeholder="WhatsApp Number" value="+256" class="w-full px-6 py-5 border rounded-3xl focus:border-teal-400 outline-none">
+                <textarea id="modal-brief" rows="4" placeholder="Project brief (topic, deadline, requirements...)" class="w-full px-6 py-5 border rounded-3xl focus:border-teal-400 outline-none"></textarea>
+            </div>
+            
+            <button onclick="submitOnboardModal()" 
+                    class="mt-8 w-full py-6 bg-gradient-to-r from-teal-600 to-amber-500 text-white font-semibold rounded-3xl text-lg">
+                SEND TO CONSULTANT
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Tailwind script already loaded via CDN
+        
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu')
+            menu.classList.toggle('hidden')
+        }
+        
+        function navigateToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' })
+        }
+        
+        // Fade-in observer
+        function initFadeIns() {
+            const elements = document.querySelectorAll('.fade-in')
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible')
+                    }
+                })
+            }, { threshold: 0.1 })
+            
+            elements.forEach(el => observer.observe(el))
+        }
+        
+        // Navbar scroll
+        function handleScroll() {
+            const nav = document.getElementById('navbar')
+            if (window.scrollY > 50) {
+                nav.classList.add('navbar-scrolled')
+            } else {
+                nav.classList.remove('navbar-scrolled')
+            }
+        }
+        
+        // Testimonials
+        let currentTestimonial = 0
+        const testimonials = [
+            { quote: "BJB Consults helped me complete my dissertation with distinction. Professional and fast!", name: "Amina Nakato", role: "MBA, Makerere" },
+            { quote: "Their book analysis was exceptional. Highly recommended for any literature student.", name: "John Okello", role: "MA Literature, Kyambogo" },
+            { quote: "Excellent data analysis support using SPSS. Delivered on time with great quality.", name: "Sarah Nambi", role: "PhD, Mbarara University" }
+        ]
+        
+        function renderTestimonials() {
+            const container = document.getElementById('testimonial-slider')
+            container.innerHTML = ''
+            
+            testimonials.forEach(t => {
+                const div = document.createElement('div')
+                div.className = 'min-w-full px-6 md:px-12'
+                div.innerHTML = `
+                    <div class="bg-gray-50 p-10 rounded-3xl">
+                        <p class="italic text-2xl leading-relaxed">"${t.quote}"</p>
+                        <div class="mt-8 flex items-center gap-4">
+                            <div class="w-12 h-12 bg-teal-200 rounded-2xl"></div>
+                            <div>
+                                <p class="font-semibold">${t.name}</p>
+                                <p class="text-sm text-gray-500">${t.role}</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+                container.appendChild(div)
+            })
+        }
+        
+        function nextTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length
+            document.getElementById('testimonial-slider').style.transform = `translateX(-${currentTestimonial * 100}%)`
+        }
+        
+        function prevTestimonial() {
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length
+            document.getElementById('testimonial-slider').style.transform = `translateX(-${currentTestimonial * 100}%)`
+        }
+        
+        function showQuickOnboardModal() {
+            document.getElementById('onboard-modal').classList.remove('hidden')
+            document.getElementById('onboard-modal').classList.add('flex')
+        }
+        
+        function hideQuickOnboardModal() {
+            const modal = document.getElementById('onboard-modal')
+            modal.classList.add('hidden')
+            modal.classList.remove('flex')
+        }
+        
+        function submitOnboardModal() {
+            hideQuickOnboardModal()
+            const name = document.getElementById('modal-name').value || "Client"
+            
+            const toast = document.createElement('div')
+            toast.className = 'fixed bottom-8 right-8 bg-teal-700 text-white px-8 py-4 rounded-3xl shadow-2xl flex items-center gap-4 z-[10000]'
+            toast.innerHTML = `
+                <i class="fa-solid fa-check-circle text-3xl"></i>
+                <div>
+                    <p class="font-semibold">Thank you, ${name}!</p>
+                    <p class="text-sm opacity-90">Our team will contact you shortly via WhatsApp.</p>
+                </div>
+            `
+            document.body.appendChild(toast)
+            
+            setTimeout(() => toast.remove(), 5000)
+        }
+        
+        // Initialize everything
+        window.onload = function() {
+            initFadeIns()
+            renderTestimonials()
+            window.addEventListener('scroll', handleScroll)
+            
+            // Keyboard shortcut
+            document.addEventListener('keydown', (e) => {
+                if (e.key.toLowerCase() === 'q') showQuickOnboardModal()
+            })
+            
+            console.log('%cBJB Consults website loaded successfully with enhanced animations!', 'color:#0f766e; font-weight:600')
+        }
+    </script>
+</body>
+</html>
